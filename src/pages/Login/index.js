@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { LayoutWrapper, Input, Button } from '../../components';
+import { LayoutWrapper, Input, Button, Divider } from '../../components';
 import { setAuthenticated } from '../../store/modules/auth/actions';
 
 const Login = () => {
@@ -17,6 +17,7 @@ const Login = () => {
 
   return (
     <LayoutWrapper>
+      <Divider height={200} />
       <img src="https://static.tvmaze.com/images/tvm-header-logo.png" alt="logo" />
       <h1>Sign In</h1>
       <form className="form-wrapper">

@@ -1,5 +1,10 @@
-/* eslint-disable import/prefer-default-export */
-export const isLoading = (status) => ({
-      status,
-      type: 'SET_IS_LOADING',
+
+
+export const setCurrentSearch = (search) => ({
+      currentTitle: search,
+      type: 'SET_CURRENT_SEARCH',
+});
+export const setTVShowList = (list) => ({
+      tvShowList: list,
+      type: 'SET_TV_SHOW_LIST',
 });

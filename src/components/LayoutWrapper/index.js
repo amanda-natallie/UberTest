@@ -14,7 +14,7 @@ const LayoutWrapper = ({ children }) => {
       <Header />
       <section className="content-wrapper">
         {isAuthenticated && <Sidebar />}
-        <div className="site-content">
+        <div className={`site-content ${isAuthenticated && 'pad-left'}`}>
           {children}
         </div>
       </section>

@@ -17,7 +17,7 @@
     box-shadow: 0px 8px 20px rgb(0 0 0 / 6%);
     border-radius: 8px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
 }
 
@@ -27,6 +27,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 /* form components*/
 .form-wrapper {
@@ -46,4 +47,8 @@
 
 h1 {
     margin: 1rem 0;
+}
+
+.pad-left {
+    padding-left: 290px
 }
