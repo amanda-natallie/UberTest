@@ -8,7 +8,7 @@ const CardList = ({ tvShowList }) => {
 
     return (
       <Card className="tvshow-header">
-        <p> {bar}</p>
+        <h1> {bar} </h1>
       </Card>
     );
 };
@@ -16,5 +16,6 @@ const CardList = ({ tvShowList }) => {
 export default CardList;
 
 CardList.propTypes = {
-    tvShowList: PropTypes.objectOf(PropTypes.object).isRequired
+    // eslint-disable-next-line react/forbid-prop-types
+    tvShowList: PropTypes.any.isRequired
 };

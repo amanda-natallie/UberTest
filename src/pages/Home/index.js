@@ -11,7 +11,7 @@ const Home = () => {
     return (
       <LayoutWrapper>
         {isLoading && <div>Loading...</div>}
-        {tvShowList ? (
+        {!isLoading && tvShowList ? (
           <CardList tvShowList={tvShowList} />
         ) : (
           <Card className="empty-card">
