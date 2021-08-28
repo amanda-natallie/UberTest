@@ -1,11 +1,14 @@
 import React from 'react';
+import LayoutWrapper from '../components/LayoutWrapper';
 
 const Login = () => {
-  const a = 1;
+  const handleLogin = () => true;
+
   return (
-    <div>
-      <h2>Login: {a}</h2>
-    </div>
+    <LayoutWrapper>
+      <div>Login Page :)</div>
+      <button onClick={() => handleLogin()}>Oie</button>
+    </LayoutWrapper>
   );
 };
 
