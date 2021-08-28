@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -24,5 +25,5 @@ const LayoutWrapper = ({ children }) => {
 export default LayoutWrapper;
 
 LayoutWrapper.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.element.isRequired
 };

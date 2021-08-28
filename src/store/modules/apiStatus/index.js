@@ -12,7 +12,7 @@ const reducer = (state = INITIAL_STATE, action) => {
             return { ...state, isLoading: action.status };
         case 'SET_RESPONSE_STATUS':
             console.log('SET_RESPONSE_STATUS', action.status);
-            return { ...state, isLoading: action.status };
+            return { ...state, responseStatus: action.status };
         default:
             return state;
     }

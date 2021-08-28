@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import './styles.css';
 import { Card, Divider } from '../../components/';
 import noCover from '../../images/no-image.jpg';
 
-const CardList = ({ tvShowList }) => {
-    const b = tvShowList;
+const CardList = () => {
+    const { tvShowList: b } = useSelector(state => state.tvShow);
 
     return (
       <>
@@ -23,7 +23,7 @@ const CardList = ({ tvShowList }) => {
         <Divider height={100} />
         {// eslint-disable-next-line no-underscore-dangle
         b._embedded.episodes.map((item) => (
-          <Card key={b.id} className="episode-card" >
+          <Card key={item.id} className="episode-card" >
             <>
               <div className="episode-card-left">
                 <img src={item.image ? item.image.original : noCover} alt={item.name} />
@@ -40,8 +40,3 @@ const CardList = ({ tvShowList }) => {
 };
 
 export default CardList;
-
-CardList.propTypes = {
-    // eslint-disable-next-line react/forbid-prop-types
-    tvShowList: PropTypes.any.isRequired
-};

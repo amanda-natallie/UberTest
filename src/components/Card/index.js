@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Card = ({ className, children, ...rest }) => (
-  <div className={`card ${className}`} {...rest}>
+const Card = ({ className, children }) => (
+  <div className={`card ${className}`}>
     {children}
   </div>
     );
@@ -10,6 +10,6 @@ const Card = ({ className, children, ...rest }) => (
 export default Card;
 
 Card.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.element.isRequired,
     className: PropTypes.string.isRequired,
 };
