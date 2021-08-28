@@ -1,19 +1,17 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { setLoading } from '../store/modules/apiStatus/actions';
+import LayoutWrapper from '../components/LayoutWrapper';
 
 const Home = () => {
-    const stateDefault = useSelector(state => state.apiStatus);
+    const { isLoading } = useSelector(state => state.apiStatus);
     const dispatch = useDispatch();
     return (
-      <>
-        <div>Tá: {stateDefault.isLoading ? 'true' : 'false'}</div>
-        <button onClick={() => dispatch({
-            status: !stateDefault.isLoading,
-            type: 'SET_IS_LOADING',
-          })}
-        >Clica
+      <LayoutWrapper>
+        <div>Tá: {isLoading ? 'true' : 'false'}</div>
+        <button onClick={() => dispatch(setLoading(!isLoading))}>Clica
         </button>
-      </>
+      </LayoutWrapper>
     );
 };
 

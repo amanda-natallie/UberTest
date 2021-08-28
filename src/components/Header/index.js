@@ -1,9 +1,10 @@
 import React from 'react';
+import './styles.css';
 
 const Header = () => (
-  <div>
+  <header>
     Header
-  </div>
+  </header>
     );
 
 export default Header;
