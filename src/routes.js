@@ -1,21 +1,35 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
+import Home from './pages/Home';
+import Search from './pages/Search';
+import SearchResult from './pages/SearchResult';
+import Login from './pages/Login';
 
 const Navigation = () => {
-    const stateDefault = useSelector(state => state.apiStatus);
-    const dispatch = useDispatch();
+  const isAuthorized = false;
 
-    return (
-      <>
-        <div>Tá: {stateDefault.isLoading ? 'true' : 'false'}</div>
-        <button onClick={() => dispatch({
-            status: !stateDefault.isLoading,
-            type: 'SET_IS_LOADING',
-          })}
-        >Clica
-        </button>
-      </>
-    );
+
+  return (
+    <BrowserRouter>
+      <Switch>
+        {isAuthorized ? (
+          <>
+            <Route path="/search-results"><SearchResult /></Route>
+            <Route path="/search"><Search /></Route>
+            <Route path="/" ><Home /></Route>
+            <Redirect to="/" />
+
+          </>
+      ) : (
+        <>
+          <Route exact path="/login"><Login /></Route>
+          <Redirect to="/login" />
+        </>
+          )}
+      </Switch>
+    </BrowserRouter>
+
+  );
 };
 
 export default Navigation;
