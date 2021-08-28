@@ -1,6 +1,6 @@
 
 const INITIAL_STATE = {
-    isAuthenticated: false,
+    isAuthenticated: true,
 };
 
 const reducer = (state = INITIAL_STATE, action) => {

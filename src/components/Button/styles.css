@@ -1,0 +1,32 @@
+
+button {
+    width: 100%;
+    display: block;
+    padding: 10px 16px;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    background: #09091A;
+    transition: all 200ms ease;
+    border-radius: 8px;
+    appearance: none;
+    position: relative;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    height: 45px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+}
+button:hover {
+    background: #1b1b20;
+}
+
+button:disabled {
+    background-color: #CECECE;
+    color: #E5E5E5;
+    user-select: none;
+    pointer-events: none;
+}

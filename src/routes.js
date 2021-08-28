@@ -17,8 +17,8 @@ const Navigation = () => {
           <>
             <Route path="/search-results"><SearchResult /></Route>
             <Route path="/search"><Search /></Route>
-            <Route path="/" ><Home /></Route>
-            <Redirect to="/" />
+            <Route path="/home" ><Home /></Route>
+            <Redirect to="/home" />
 
           </>
       ) : (

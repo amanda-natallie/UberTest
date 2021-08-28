@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setLoading } from '../store/modules/apiStatus/actions';
-import LayoutWrapper from '../components/LayoutWrapper';
+import { setLoading } from '../../store/modules/apiStatus/actions';
+import { LayoutWrapper } from '../../components';
 
 const Home = () => {
     const { isLoading } = useSelector(state => state.apiStatus);
