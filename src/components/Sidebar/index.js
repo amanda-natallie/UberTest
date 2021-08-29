@@ -1,19 +1,21 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { setTVShowList } from '../../store/modules/tvShow/actions';
+import { setTVShowList, setCurrentSearch } from '../../store/modules/tvShow/actions';
 import { setResponseStatus, setLoading } from '../../store/modules/apiStatus/actions';
 import getSeasons from '../../utils/getSeasons';
+import useClickOutside from '../../hooks/useClickOutside';
 
 import { Input, Button, SeasonsList } from '../';
 import './styles.css';
 
-const Sidebar = ({ closed }) => {
+const Sidebar = ({ closed, onClickOutside }) => {
   const { isLoading } = useSelector(state => state.apiStatus);
   const [search, setSearch] = useState('');
   const [seasons, setSeasons] = useState(null);
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const ref = useRef(null);
 
 
   const getTvShowList = async () => {
@@ -25,22 +27,23 @@ const dispatch = useDispatch();
           status: response.status
         };
       };
+  useClickOutside(ref, onClickOutside);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { data, status } = await getTvShowList();
-    const { episodes } = data._embedded;
-    if (episodes.length > 0) {
+    if (data) {
       const { length } = getSeasons(data._embedded.episodes);
       setSeasons(length);
     }
     dispatch(setTVShowList(data));
     dispatch(setResponseStatus(status));
     dispatch(setLoading(false));
+    dispatch(setCurrentSearch(search));
   };
 
   return (
-    <aside className={closed ? 'closed' : null}>
+    <aside className={closed ? 'closed' : null} ref={ref}>
       <div className="search-box">
         <h1>Search by Title</h1>
         <form>
@@ -60,7 +63,7 @@ const dispatch = useDispatch();
         </form>
       </div>
 
-      {seasons && <SeasonsList seasons={seasons} />}
+      {seasons ? <SeasonsList seasons={seasons} /> : null}
 
     </aside>
     );
@@ -70,9 +73,11 @@ export default Sidebar;
 
 
 Sidebar.propTypes = {
-  closed: PropTypes.bool
+  closed: PropTypes.bool,
+  onClickOutside: PropTypes.func
 };
 
 Sidebar.defaultProps = {
-  closed: false
+  closed: false,
+  onClickOutside: () => {}
 };

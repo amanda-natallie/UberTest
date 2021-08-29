@@ -13,7 +13,8 @@ const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
     if (u === login && p === password) {
       dispatch(setAuthenticated(true));
       history.push('/');
@@ -63,8 +64,8 @@ const Login = () => {
           {showMessage && <span className="error-message">Your credentials are not valid. Try again</span>}
           <Button
             text="Sign In"
-            action={() => handleLogin()}
-            type="button"
+            action={(e) => handleLogin(e)}
+            type="submit"
             disabled={!login || !password || showMessage}
           />
         </form>

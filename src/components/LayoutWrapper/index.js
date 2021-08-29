@@ -18,8 +18,10 @@ const LayoutWrapper = ({ contentWide, children }) => {
     <main className="site-wrapper">
       <Header showMenuButton={!contentWide} toggleMenu={toggleMenu} />
       <section className="content-wrapper">
-        {isAuthenticated && <Sidebar closed={!contentWide && !menuOpen} />}
-        <div className={`site-content ${contentWide ? 'pad-left' : null}`}>
+        {isAuthenticated &&
+          <Sidebar closed={!contentWide && !menuOpen} onClickOutside={() => toggleMenu()} />}
+
+        <div className={`site-content ${contentWide && isAuthenticated ? 'pad-left' : null}`}>
           {children}
         </div>
       </section>

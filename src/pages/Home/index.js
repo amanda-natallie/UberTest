@@ -2,7 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import useWindowSize from '../../hooks/useWindowSize';
-import { LayoutWrapper, Card, CardList, Loader } from '../../components';
+import { LayoutWrapper, CardList, Loader, Divider } from '../../components';
+import image404 from '../../images/404.png';
+import imageSearch from '../../images/search.jpg';
 
 
 const Home = () => {
@@ -27,16 +29,27 @@ const Home = () => {
 
         if (responseStatus === 404) {
             return (
-              <Card className="empty-card">
-                <h2>
-                  We could not find any Tv Shows related to {currentTitle}.
+              <>
+                <Divider height={120} />
+                <h1 className="text-center">
+                  We could not find any Tv Shows related to <i>&quot;{currentTitle}&quot;</i>.<br />
                   Try again with another search key
-                </h2>
-              </Card>
+                </h1>
+                <Divider height={50} />
+                <img src={image404} alt="empty" />
+              </>
             );
         }
         if (!tvShowList && !responseStatus) {
-          return <h1>Search</h1>;
+          return (
+            <>
+              <Divider height={120} />
+              <h1 className="text-center">
+                Search something and we will show you the results!
+              </h1>
+              <img src={imageSearch} alt="search" />
+            </>
+          );
         }
         return (
           <CardList
