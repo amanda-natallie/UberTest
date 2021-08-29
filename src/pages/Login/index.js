@@ -33,41 +33,42 @@ const Login = () => {
 
   return (
     <LayoutWrapper>
-      <Divider height={200} />
-      <img src="https://static.tvmaze.com/images/tvm-header-logo.png" alt="logo" />
-      <h1>Sign In</h1>
-      <form className="form-wrapper">
-        <div className="form-group">
-          <span>Your username</span>
-          <Input
-            isValid={!showMessage}
-            onFocus={() => resetForm()}
-            setValue={(e) => setLogin(e.target.value)}
-            value={login}
-            type="text"
-            placeholder="Enter your username"
+      <React.Fragment>
+        <Divider height={200} />
+        <img src="https://static.tvmaze.com/images/tvm-header-logo.png" alt="logo" />
+        <h1>Sign In</h1>
+        <form className="form-wrapper">
+          <div className="form-group">
+            <span>Your username</span>
+            <Input
+              isValid={!showMessage}
+              onFocus={() => resetForm()}
+              setValue={(e) => setLogin(e.target.value)}
+              value={login}
+              type="text"
+              placeholder="Enter your username"
+            />
+          </div>
+          <div className="form-group">
+            <span>Your password</span>
+            <Input
+              setValue={(e) => setPassword(e.target.value)}
+              value={password}
+              type="password"
+              isValid={!showMessage}
+              onFocus={() => resetForm()}
+              placeholder="Enter your password"
+            />
+          </div>
+          {showMessage && <span className="error-message">Your credentials are not valid. Try again</span>}
+          <Button
+            text="Sign In"
+            action={() => handleLogin()}
+            type="button"
+            disabled={!login || !password || showMessage}
           />
-        </div>
-        <div className="form-group">
-          <span>Your password</span>
-          <Input
-            setValue={(e) => setPassword(e.target.value)}
-            value={password}
-            type="password"
-            isValid={!showMessage}
-            onFocus={() => resetForm()}
-            placeholder="Enter your password"
-          />
-        </div>
-        {showMessage && <span className="error-message">Your credentials are not valid. Try again</span>}
-        <Button
-          text="Sign In"
-          action={() => handleLogin()}
-          type="button"
-          disabled={!login || !password || showMessage}
-        />
-      </form>
-
+        </form>
+      </React.Fragment>
     </LayoutWrapper>
   );
 };

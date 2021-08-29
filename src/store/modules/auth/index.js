@@ -1,6 +1,6 @@
 
 const INITIAL_STATE = {
-    isAuthenticated: false,
+    isAuthenticated: true,
     password: '123',
     user: 'amanda',
 };

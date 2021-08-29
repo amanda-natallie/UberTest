@@ -9,6 +9,9 @@ const Button = ({ text, action, ...rest }) => (
 export default Button;
 
 Button.propTypes = {
-    action: PropTypes.func.isRequired,
+    action: PropTypes.func,
     text: PropTypes.string.isRequired,
+};
+Button.defaultProps = {
+    action: () => {}
 };

@@ -1,0 +1,85 @@
+
+.tvshow-header {
+    width: 100%;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e3e3e3;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.tvshow-header img {
+    max-height: 350px;
+}
+
+.tvshow-header .header {
+    display: flex;
+}
+
+.tvshow-header .header .header-right{
+    width: calc(100% - 350px);
+    padding-left: 2rem;
+}
+.tvshow-header .header .header-right h1{
+    text-align: left;
+}
+.tvshow-header .header .header-right h4{
+    display: inline-block;
+}
+.tvshow-header .header .header-right span:first-of-type{
+    margin-left: 10px;
+}
+.tvshow-header .header .header-right ul{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.tvshow-header .header .header-right li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #9cadab;
+    color: #000;
+    margin-left: 0;
+}
+.tvshow-header .header .header-right li b{
+    display: inline-block;
+}
+.chip {
+    display: inline-block;
+    height: 25px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 25px;
+    padding: 0 12px;
+    border-radius: 25px;
+    background-color: #41756F;
+    color: white;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.card.episode-card {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card.episode-card .episode-card-left{
+    width: 40%;
+}
+.card.episode-card .episode-card-right{
+    width: 60%;
+    padding-left: 2rem;
+}
+
+a {
+    display: block;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -8,7 +8,7 @@ const Input = ({
     isValid,
     ...rest
 }) => (
-  <input value={value} onChange={setValue} {...rest} className={!isValid && 'invalid-input'} />
+  <input value={value} onChange={setValue} {...rest} className={!isValid ? 'invalid-input' : undefined} />
     );
 
 export default Input;

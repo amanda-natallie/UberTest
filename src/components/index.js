@@ -6,3 +6,4 @@ export { default as LayoutWrapper } from './LayoutWrapper';
 export { default as Card } from './Card';
 export { default as CardList } from './CardList';
 export { default as Loader } from './Loader';
+export { default as SeasonsList } from './SeasonsList';
