@@ -23,7 +23,7 @@ const Home = () => {
             );
         }
         if (!tvShowList && !responseStatus) {
-          return <h1>No Tv Shows</h1>;
+          return <h1>Search</h1>;
         }
         return (
           <CardList

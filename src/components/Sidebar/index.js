@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setTVShowList } from '../../store/modules/tvShow/actions';
 import { setResponseStatus, setLoading } from '../../store/modules/apiStatus/actions';
 
@@ -9,8 +9,10 @@ import { Input, Button } from '../';
 import './styles.css';
 
 const Sidebar = () => {
+  const { isLoading } = useSelector(state => state.apiStatus);
   const [search, setSearch] = useState('');
 const dispatch = useDispatch();
+
 
   const getTvShowList = async () => {
     dispatch(setLoading(true));
@@ -33,8 +35,18 @@ const dispatch = useDispatch();
   return (
     <aside>
       <h1>Search by Title</h1>
-      <Input value={search} setValue={(e) => setSearch(e.target.value)} />
-      <Button text="GO" type="submit" action={(e) => handleSubmit(e)} />
+      <Input
+        placeholder="Search by Title"
+        disabled={isLoading}
+        value={search}
+        setValue={(e) => setSearch(e.target.value)}
+        onFocus={() => {
+          dispatch(setResponseStatus(null));
+          dispatch(setTVShowList(null));
+          setSearch('');
+        }}
+      />
+      <Button text="GO" disabled={isLoading} type="submit" action={(e) => handleSubmit(e)} />
     </aside>
     );
 };

@@ -9,3 +9,11 @@ input {
     margin: 1rem 0;
     padding: 0 1rem;
 }
+
+input:disabled {
+    background-color: #CECECE;
+    color: #E5E5E5;
+    user-select: none;
+    pointer-events: none;
+    cursor: not-allowed;
+}
