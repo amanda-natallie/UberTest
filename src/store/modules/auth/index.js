@@ -1,6 +1,8 @@
 
 const INITIAL_STATE = {
     isAuthenticated: false,
+    password: '123',
+    user: 'amanda',
 };
 
 const reducer = (state = INITIAL_STATE, action) => {

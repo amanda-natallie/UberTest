@@ -17,3 +17,7 @@ input:disabled {
     pointer-events: none;
     cursor: not-allowed;
 }
+
+.invalid-input {
+    border-color: #f00;
+}

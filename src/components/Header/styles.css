@@ -7,11 +7,12 @@ header {
     box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
     padding: 0.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 15rem;
     background: url("../../images/header-bg.jpg") center center no-repeat;
     background-size: 100% auto;
+    color: #fff;
 }
 
 header::after {
