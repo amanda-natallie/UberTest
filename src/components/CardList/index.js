@@ -20,6 +20,7 @@ const CardList = () => {
     }
     }, [seasonSelected]);
 
+    const renderHTML = (string) => React.createElement('span', { dangerouslySetInnerHTML: { __html: string } });
     return (
       <>
         {b && (
@@ -31,7 +32,7 @@ const CardList = () => {
               </div>
               <div className="header-right">
                 <h1> {b.name} </h1>
-                {b.summary}
+                {renderHTML(b.summary)}
                 <br />
                 <h4>Genres: </h4>
                 {b.genres.map(genre => (
@@ -61,7 +62,7 @@ const CardList = () => {
                 </div>
                 <div className="episode-card-right">
                   <h3>{item.number} - {item.name}</h3>
-                  <p>{item.summary}</p>
+                  <p>{renderHTML(item.summary)}</p>
                   <p className="chip">Release: {moment(item.airstamp).format('DD/MM/YYYY')}</p>
                   <a href={item.url} target="_blank" rel="noopener noreferrer">Go to episode</a>
                 </div>
