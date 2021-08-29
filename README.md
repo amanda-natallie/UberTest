@@ -53,7 +53,7 @@ https://api.tvmaze.com/singlesearch/shows?q=Silicon%20Valley&embed=episodes
 
 - Show this screen after sending the request to the API and while waiting for a response from the API.
 
-- Create a CSS spinner of your own construction. Use these two color codes `#00C4CC` & `#555753` in your spinner
+- Create a CSS Loader of your own construction. Use these two color codes `#00C4CC` & `#555753` in your Loader
 
 - Disable the text input and search button while waiting for the API response.
 

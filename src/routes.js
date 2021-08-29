@@ -3,7 +3,6 @@ import React from 'react';
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Home from './pages/Home';
-import SearchResult from './pages/SearchResult';
 import Login from './pages/Login';
 
 const Navigation = () => {
@@ -14,7 +13,6 @@ const Navigation = () => {
       <Switch>
         {isAuthenticated ? (
           <>
-            <Route path="/search-results"><SearchResult /></Route>
             <Route path="/home" ><Home /></Route>
             <Redirect to="/home" />
           </>

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { LayoutWrapper, Card, CardList } from '../../components';
+import { LayoutWrapper, Card, CardList, Loader } from '../../components';
 
 const Home = () => {
     const { tvShowList, currentTitle } = useSelector(state => state.tvShow);
@@ -9,7 +9,7 @@ const Home = () => {
 
     const renderCardList = () => {
         if (isLoading) {
-            return <div>Loading...</div>;
+            return <Loader />;
         }
 
         if (responseStatus === 404) {
