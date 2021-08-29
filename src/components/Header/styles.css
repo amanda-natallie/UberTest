@@ -9,6 +9,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column-reverse;
     height: 15rem;
     background: url("../../images/header-bg.jpg") center center no-repeat;
     background-size: 100% auto;
@@ -25,4 +26,10 @@ header::after {
     display: block;
     z-index: 4;
     background-color: rgba(0,0,0,0.4);
+}
+
+.menu-button {
+    width: 10rem;
+    margin-top: 1rem;
+    z-index: 50;
 }

@@ -15,6 +15,7 @@
 }
 
 .tvshow-header .header {
+    width: 100%;
     display: flex;
 }
 
@@ -68,12 +69,14 @@
     align-items: center;
     justify-content: space-between;
 }
-.card.episode-card .episode-card-left{
-    width: 40%;
-}
-.card.episode-card .episode-card-right{
-    width: 60%;
-    padding-left: 2rem;
+@media only screen and (min-width: 901px) {
+    .card.episode-card .episode-card-left{
+        width: 40%;
+    }
+    .card.episode-card .episode-card-right{
+        width: 60%;
+        padding-left: 2rem;
+    }
 }
 
 a {
@@ -82,4 +85,17 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+@media only screen and (max-width: 901px) {
+    .tvshow-header .header {
+        flex-direction: column;
+    }
+    .tvshow-header .header .header-right, 
+    .tvshow-header .header .header-left,
+    .tvshow-header .header  img
+    {
+        width: 100%;
+        max-width: 100%;
+        max-height: none;
+    }
 }

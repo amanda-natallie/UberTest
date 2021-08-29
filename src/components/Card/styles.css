@@ -4,3 +4,13 @@
     border-radius: 8px;
     padding: 1rem;
 }
+
+@media only screen and (max-width: 900px) {
+    .card {
+        flex-direction: column;
+        width: 100%;
+    }
+    .card p, .card img, .card div {
+        width: 100%;
+    }
+}

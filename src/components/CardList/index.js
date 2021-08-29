@@ -63,7 +63,7 @@ const CardList = () => {
                 <div className="episode-card-right">
                   <h3>{item.number} - {item.name}</h3>
                   <p>{renderHTML(item.summary)}</p>
-                  <p className="chip">Release: {moment(item.airstamp).format('DD/MM/YYYY')}</p>
+                  <span className="chip">Release: {moment(item.airstamp).format('DD/MM/YYYY')}</span>
                   <a href={item.url} target="_blank" rel="noopener noreferrer">Go to episode</a>
                 </div>
               </React.Fragment>

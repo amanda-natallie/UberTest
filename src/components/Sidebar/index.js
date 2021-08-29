@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import { setTVShowList } from '../../store/modules/tvShow/actions';
 import { setResponseStatus, setLoading } from '../../store/modules/apiStatus/actions';
 import getSeasons from '../../utils/getSeasons';
@@ -8,7 +9,7 @@ import getSeasons from '../../utils/getSeasons';
 import { Input, Button, SeasonsList } from '../';
 import './styles.css';
 
-const Sidebar = () => {
+const Sidebar = ({ closed }) => {
   const { isLoading } = useSelector(state => state.apiStatus);
   const [search, setSearch] = useState('');
   const [seasons, setSeasons] = useState(null);
@@ -39,7 +40,7 @@ const dispatch = useDispatch();
   };
 
   return (
-    <aside>
+    <aside className={closed ? 'closed' : null}>
       <div className="search-box">
         <h1>Search by Title</h1>
         <form>
@@ -66,3 +67,12 @@ const dispatch = useDispatch();
 };
 
 export default Sidebar;
+
+
+Sidebar.propTypes = {
+  closed: PropTypes.bool
+};
+
+Sidebar.defaultProps = {
+  closed: false
+};
