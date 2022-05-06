@@ -1,4 +1,4 @@
-# Uber Mobility Concepts Team React/Redux Coding Project
+# Vallori Solutions Team React/Redux Coding Project
 
 Run:
 `yarn`
